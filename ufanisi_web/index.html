@@ -1,0 +1,246 @@
+<!-- =========================
+FILE: index.html
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UFANISI ELITE ERP</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= STORE PAGE ================= -->
+<div id="storePage" class="page active">
+
+<div class="container">
+
+<div class="logo-area">
+
+<img id="storeLogo">
+
+<h1 id="logoText" class="logo">
+UFANISI POULTRY
+</h1>
+
+<p class="subtitle">
+Fresh Farm Products
+</p>
+
+</div>
+
+<button class="btn"
+onclick="goOrder()">
+Shop Now
+</button>
+
+<div id="marketList"></div>
+
+<div id="socialLinks"></div>
+
+</div>
+</div>
+
+<!-- ================= ORDER PAGE ================= -->
+<div id="orderPage" class="page">
+
+<div class="container">
+
+<button class="btn small"
+onclick="goStore()">
+⬅ Back
+</button>
+
+<h2>Place Order</h2>
+
+<input id="cName"
+placeholder="Customer Name">
+
+<input id="cPhone"
+placeholder="+2547XXXXXXXX">
+
+<select id="productSelect"></select>
+
+<input id="qty"
+type="number"
+placeholder="Quantity">
+
+<button id="orderBtn"
+class="btn"
+onclick="createOrder(event)">
+Place Order
+</button>
+
+</div>
+</div>
+
+<!-- ================= ADMIN LOGIN ================= -->
+<div id="adminLogin" class="modal">
+
+<div class="container">
+
+<h2>Admin Access</h2>
+
+<input id="adminPass"
+type="password"
+placeholder="Enter Password">
+
+<button class="btn"
+onclick="checkAdmin()">
+Login
+</button>
+
+<button class="btn small"
+onclick="closeAdmin()">
+Close
+</button>
+
+</div>
+</div>
+
+<!-- ================= ADMIN PANEL ================= -->
+<div id="adminPanel" class="page">
+
+<div class="container">
+
+<h2>UFANISI ELITE ERP</h2>
+
+<button class="btn small"
+onclick="logoutAdmin()">
+Logout
+</button>
+
+<!-- NAVIGATION -->
+<div class="nav">
+
+<button onclick="showTab('inventory')">
+Inventory
+</button>
+
+<button onclick="showTab('orders')">
+Orders
+</button>
+
+<button onclick="showTab('reports')">
+Reports
+</button>
+
+<button onclick="showTab('settings')">
+Settings
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= INVENTORY ================= -->
+<div id="inventoryTab" class="tab">
+
+<h3>Add Product</h3>
+
+<input id="pName"
+placeholder="Product Name">
+
+<input id="pPrice"
+type="number"
+placeholder="Price">
+
+<input id="pStock"
+type="number"
+placeholder="Stock">
+
+<textarea id="pDesc"
+placeholder="Description"></textarea>
+
+<input type="file" id="pImage">
+
+<button id="addProductBtn"
+class="btn"
+onclick="addProduct(event)">
+Add Product
+</button>
+
+<div id="adminProducts"></div>
+
+</div>
+
+<!-- ================= ORDERS ================= -->
+<div id="ordersTab"
+class="tab"
+style="display:none;">
+
+<div id="adminOrders"></div>
+
+</div>
+
+<!-- ================= REPORTS ================= -->
+<div id="reportsTab"
+class="tab"
+style="display:none;">
+
+<div id="reportBox"></div>
+
+</div>
+
+<!-- ================= SETTINGS ================= -->
+<div id="settingsTab"
+class="tab"
+style="display:none;">
+
+<h3>Store Settings</h3>
+
+<input id="storeNameInput"
+placeholder="Store Name">
+
+<input id="whatsappInput"
+placeholder="WhatsApp Number">
+
+<hr>
+
+<h3>Store Logo</h3>
+
+<input type="file" id="logoUpload">
+
+<button class="btn danger"
+onclick="deleteLogo()">
+Delete Logo
+</button>
+
+<hr>
+
+<h3>Social Media Links</h3>
+
+<input id="facebookInput"
+placeholder="Facebook Link">
+
+<input id="instagramInput"
+placeholder="Instagram Link">
+
+<input id="tiktokInput"
+placeholder="TikTok Link">
+
+<hr>
+
+<button class="btn"
+onclick="toggleDarkMode()">
+Toggle Dark Mode
+</button>
+
+<button class="btn"
+onclick="saveSettings()">
+Save Settings
+</button>
+
+</div>
+
+</div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
